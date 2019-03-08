@@ -6,52 +6,54 @@ package ac.za.cput;
  */
 public class Employee
 {
-    private String fullName;
-    private String lastName;
-    private int age;
+    private int id;
+    private String name;
 
     public Employee()
     {
 
     }
 
-    public Employee(String fName, String lName, int age)
+     public Employee(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public boolean equals(Object obj)
     {
-        fName = fullName;
-        lName = lastName;
-        age = age;
+        if(this == obj)
+            return true;
+        if(obj == null || obj.getClass() != obj.getClass())
+            return false;
+        Employee employee = (Employee) obj;
+        return name.equals(employee.name);
     }
 
-    public String getFullName() {
-        return fullName;
-    }
+    public int hashCode()
+    {
 
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
+        return Objects.hash(name);
     }
+//testing nvm
+public int money(int a ,int b)
+{
+    return a + b;
 
-    /*public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    @Override
-    public String toString() {
-        return "Employee{" +
-                "fullName='" + fullName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", age=" + age +
-                '}';
-    }*/
+}
 }
